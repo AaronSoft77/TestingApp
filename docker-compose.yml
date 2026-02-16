@@ -1,0 +1,14 @@
+services:
+  app:
+    build: 
+      context: .
+      target: dev  # Tells Docker to stop at the 'dev' stage below
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./TestQuestions:/app/public/TestQuestions
+    environment:
+      - WATCHPACK_POLLING=true
+      - OLLAMA_KEEP_ALIVE=-1

@@ -1,0 +1,7 @@
+{
+  "name": "ESS Exam Intelligence",
+  "description": "Transform photos of test papers into interactive digital quizzes with AI-powered transcription and smart explanations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
