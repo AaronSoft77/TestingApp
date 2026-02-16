@@ -27,3 +27,21 @@ src/TestQuestions/
 │   └── circuit.png
 └── Cell_Bio/           <-- Appears as "Cell Bio Questions"
     └── mitosis.jpg
+
+## ⚙️ Configuration & AI Backend
+
+This application is optimized for local-first AI processing to ensure low latency and data privacy. It connects to a dedicated inference server within your local network.
+
+### 🤖 AI Model Details
+- **Provider:** Ollama
+- **Vision Model:** `qwen2.5vl:7b` (Optimized for visual document and diagram understanding)
+- **Keep-Alive:** Configured for `-1` in Docker to keep the model resident in GPU memory for instant response times.
+
+### 🌐 Network Settings
+The app is currently hardcoded to communicate with the following endpoint:
+- **Ollama Host:** `http://192.168.1.230:11434`
+
+### 📁 Folder-to-Bank Logic
+The application automatically parses the `src/TestQuestions` directory to create subject banks.
+- **Requirement:** Images must be placed in a subfolder (e.g., `/TestQuestions/Chem/`) to appear in the application dropdown.
+- **Supported Formats:** `.jpg`, `.jpeg`, and `.png`.
